@@ -1,10 +1,12 @@
-
 * {
     margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    overflow-wrap: break-wordstyle;
 }
 
 .navbar {
@@ -31,6 +33,7 @@ body {
 .menu {
   display: flex;
   gap:40px ;
+  font-weight:bold;
 }
 
 
@@ -57,6 +60,7 @@ body {
 
 .hero button {
    background-color: #f25605;
+   margin: 10px;
    padding: 10px;
    border: none;
    color: white;
@@ -77,6 +81,7 @@ main {
     display: flex;
     align-items: center;
     gap: 10px;
+    padding-block: 10px;
     
 }
 
@@ -84,6 +89,7 @@ main {
     display: flex;
     gap: 10px;
     border-radius: 10px;
+    padding: 10px;
     
     
 }
@@ -119,14 +125,25 @@ main {
 }
 
 .banner .bookmark {
-    position:absolute;
+    position: absolute;
+    top: 10px;
+    right: 5px;
     height: 25px;
     width: 25px;
-    top:10px;
-    right: 5px;
     background-color: gray;
     border-radius: 50%;
-    padding: 10px;
+    padding: 2.5px;
+}
+
+.cards .bookmark {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    height: 25px;
+    width: 25px;
+    background-color: gray;
+    border-radius: 50%;
+    padding: 2.5px;
 }
 
 .cards {
@@ -163,28 +180,35 @@ main {
 
 #contact {
     text-align: center;
-    margin-top: 20px;
+    margin: 40px;
+    
 }
 
 #contact h2 {
     margin-bottom: 5px;
 }
+
 hr {
     
     width: 150px;
-    margin:auto;
+    margin: auto;
     border:2px solid orange;
+    
 
 }
 
 .contact_info {
     display: flex;
-    gap: 10px;
+    gap: 20px;
+    justify-content: space-around;
+    align-items: center;
 }
 .contact_info div {
     flex: 1;
     border: 2px solid gray;
-    padding: 10px;
+    padding: 20px;
+    margin: 40px;
+    height: 100%;
 }
 
 
@@ -197,14 +221,24 @@ footer {
 footer section {
     display: flex;
     justify-content: space-around;
+    gap: 10px;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin: 20px;
     
 }
 
 footer section h3 {
-    color:orange
+    color:orange;
+    font-size: 1rem;
 }
+
+footer section ul {
+    font-weight: lighter;
+    font-size: 13px;
+}
+
+
 
 .social-icons img {
     width:25px;
@@ -224,6 +258,7 @@ li {
     text-align: center;
     border-top: 0.3px solid rgba(127, 126, 126, 0.417)
 }
+
 @media (max-width:768px) {
 
     .navbar {
@@ -233,7 +268,7 @@ li {
         
     }
     body {
-        width: 100vw;
+        width: 100%;
         
     }
     
@@ -248,16 +283,52 @@ li {
     .cards {
         grid-template-columns: repeat(2, 1fr);
     }
+    
 
     .contact_info {
         flex-direction: column ;
+    }
+
+    .social-icons img {
+        width:10px;
+        height:10px;
+    }
+
+    .social_container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+    }
+    footer section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer section ul {
+        display: flex;
+        flex-direction: column;
+        margin-block: 10px;
+    }
+
+    footer section li {
+       margin-block: -6px;
+    }
+
+    .footer_rights p {
+        font-size: 0.7rem;
+    }
 
 }
 /* mobile */
 @media (max-width: 480px) {
 
     body {
-        width: 100vw;
+        width: 100%;
         
     }
 
@@ -271,5 +342,15 @@ li {
 
     .cards {
         grid-template-columns: repeat(1, 1fr);
+    }
+
+    .social-icons img {
+        height: 1.2rem;
+        width: auto;
+    }
+
+    .social-icons {
+        margin-top: 10px;
+        gap: 10px;
     }
 }
